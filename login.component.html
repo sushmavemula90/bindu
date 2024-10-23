@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Travel Guide</title>
+
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <style>
+        /* Navbar customizations */
+        .navbar-brand .online-tour {
+            color: #11d038ac;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand .guide {
+            color: #3be0f6b9;
+            font-size: 1.5rem;
+        }
+
+        .navbar {
+            padding: 0.8rem 1rem;
+            background-color:#343a40 ;
+            
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa;
+            background-color: #3be0f6b9;
+            border-radius: 4px;
+        }
+
+        .navbar-toggler {
+            border-color: #343a40;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        .search-bar .fa-search {
+            position: absolute;
+            left: 10px;
+            color: gray;
+        }
+
+        .search-bar .fa-microphone {
+            position: absolute;
+            right: 10px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        /* Login/Register button */
+        .navbar-nav .nav-link.btn {
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .navbar-nav .nav-link.btn:hover {
+            background-color: #11d038ac;
+            color: white;
+        }
+
+        /* Login container styles */
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container .form-input {
+            padding-right: 40px;
+            width: 100%;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #333;
+        }
+
+        button.login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button.login-button:hover {
+            background-color: #19ba21;
+        }
+
+        .register-link {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .register-link a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Custom footer styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #11d038ac;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f8f9fa;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .footer-icons a:hover {
+            color: #11d038ac;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <span class="online-tour">OnlineTravel</span>
+      <span class="guide">Guide</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <!-- Navigation Links -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Accomodations.html">Accomodations</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="Agent_Reg.html">Agent Registration</a></li>
+        <li class="nav-item"><a class="nav-link" href="Admin.html">Admin</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <form class="form-inline my-2 my-lg-0">
+        <div class="search-bar position-relative">
+          <i class="fas fa-search"></i>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <i class="fas fa-microphone"></i>
+        </div>
+      </form>
+
+      <!-- Login/Register button -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" href="/login">Login/Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Login Form Section -->
+  <div class="login-container">
+    <h2 class="login-title">Login</h2>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" class="form-input" placeholder="Enter your username here" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password:</label>
+        <div class="password-container">
+          <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+          <span class="eye-icon" id="toggle-password"><i class="fas fa-eye"></i></span>
+        </div>
+      </div>
+
+      <button type="submit" class="login-button" id="login-button">Login</button>
+    </form>
+
+    <div class="register-link">
+      <p>New user? <a href="#">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: Bootstrap, Popper.js, jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Function to toggle password visibility
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('toggle-password').firstElementChild;
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash'); // Change to eye-slash icon
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye'); // Change back to eye icon
+      }
+    }
+
+    // Event listener for the eye icon
+    document.getElementById('toggle-password').addEventListener('click', togglePassword);
+  </script>
+
+</body>
+</html>
