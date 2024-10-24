@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Travel Guide</title>
+
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    
+    <style>
+        /* Navbar customizations */
+        .navbar-brand .online-tour {
+            color: #11d038ac;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand .guide {
+            color: #3be0f6b9;
+            font-size: 1.5rem;
+        }
+
+        .navbar {
+            padding: 0.8rem 1rem;
+            background-color:#343a40 ;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa;
+            background-color: #3be0f6b9;
+            border-radius: 4px;
+        }
+
+        .navbar-toggler {
+            border-color: #343a40;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        .search-bar .fa-search {
+            position: absolute;
+            left: 10px;
+            color: gray;
+        }
+
+        .search-bar .fa-microphone {
+            position: absolute;
+            right: 10px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        /* Login/Register button */
+        .navbar-nav .nav-link.btn {
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .navbar-nav .nav-link.btn:hover {
+            background-color: #11d038ac;
+            color: white;
+        }
+
+        #feedback-container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .d-flex .form-date {
+            width: 48%;
+        }
+
+        .d-flex .date-separator {
+            margin: 0 10px;
+        }
+
+        .text-area {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #form-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        
+
+        #thanks-message {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .dropdown {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        /* Custom footer styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #11d038ac;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f8f9fa;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Footer icons */
+        .footer-icons {
+            margin: 0px;
+        }
+
+        .footer-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .footer-icons a:hover {
+            color: #11d038ac;
+        }
+        
+        #submit-button-container {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        #submit-button-container button[type="submit"] {
+            background-color: #11d038ac; /* Your specified background color */
+            color: white; /* Text color for contrast */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #submit-button-container button[type="submit"]:hover {
+            background-color: #0fb02f; /* Darker shade on hover */
+            transform: scale(1.05);
+        }
+
+        #formTitle {
+            text-align: center;
+            color: #333;
+        }
+
+        #feedback-container {
+            max-width: 1000px; /* Set the maximum width */
+            margin: 0 auto; /* Center the container */
+            background-color: #fff; /* White background */
+            padding: 20px; /* Padding inside the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+    </style>
+</head>
+
+<body>
+  <!-- Main App Root (Angular) -->
+  
+  
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <span class="online-tour">OnlineTravel</span>
+      <span class="guide">Guide</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <!-- Navigation Links -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Accomodations.html">Accomodations</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="Agent_Reg.html">Agent Registration</a></li>
+        <li class="nav-item"><a class="nav-link" href="Admin.html">Admin</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <form class="form-inline my-2 my-lg-0">
+        <div class="search-bar position-relative">
+          <i class="fas fa-search"></i>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <i class="fas fa-microphone"></i>
+        </div>
+      </form>
+
+      <!-- Login/Register button -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" href="/login">Login/Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="feedback-container">
+    <h2 id="form-title">Feedback Form of Travel Guide</h2>
+
+    <form id="feedback-form">
+
+      <!-- Visitor's Name (Required) -->
+      <div class="form-group">
+        <label class="form-label required" for="visitorName">Visitor's Name:</label>
+        <input type="text" id="visitorName" class="form-input" required>
+      </div>
+
+      <!-- Email Address (Required) -->
+      <div class="form-group">
+        <label class="form-label required" for="email">Email Address:</label>
+        <input type="email" id="email" class="form-input" required>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone Number:</label>
+        <input type="text" id="phone" class="form-input">
+      </div>
+
+      <!-- Destination Visited (Required) -->
+      <div class="form-group">
+        <label class="form-label required" for="destination">Destination Traveled:</label>
+        <input type="text" id="destination" class="form-input" required>
+      </div>
+
+      <!-- Agent Name (Required) -->
+      <div class="form-group">
+        <label class="form-label required" for="agentName">Agent Name:</label>
+        <input type="text" id="agentName" class="form-input" required>
+      </div>
+
+      <!-- Visited Dates From and To (Both Required) -->
+      <div class="form-group">
+        <label class="form-label required" for="visitedDatesFrom">Visited Dates:</label>
+        <div class="d-flex">
+          <input type="date" id="visitedDatesFrom" class="form-date form-input" required>
+          <span class="date-separator">to</span>
+          <input type="date" id="visitedDatesTo" class="form-date form-input" required>
+        </div>
+      </div>
+
+      <!-- Dropdown Rating (Required) -->
+      <div class="form-group">
+        <label class="form-label required" for="rating">Rate your experience:</label>
+        <select id="rating" class="dropdown" required>
+          <option value="">Select--a-- rating</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Good">Good</option>
+          <option value="Bad">Bad</option>
+          <option value="Worst">Worst</option>
+        </select>
+      </div>
+
+      <!-- Feedback Options -->
+      <div class="form-group">
+        <label class="form-label">Rate the following services:</label>
+        <br>
+
+        <!-- Planning a Trip (Optional) -->
+        <div class="form-group">
+          <label class="form-label" for="planningTrip">Planning a Trip:</label>
+          <select id="planningTrip" class="dropdown">
+            <option value="">Select--a-- rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Worst">Worst</option>
+          </select>
+        </div>
+
+        <!-- Exploration (Optional) -->
+        <div class="form-group">
+          <label class="form-label" for="exploration">Exploration:</label>
+          <select id="exploration" class="dropdown">
+            <option value="">Select--a-- rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Worst">Worst</option>
+          </select>
+        </div>
+
+        <!-- Well Behaved (Optional) -->
+        <div class="form-group">
+          <label class="form-label" for="wellBehaved">Well Behaved:</label>
+          <select id="wellBehaved" class="dropdown">
+            <option value="">Select--a-- rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Worst">Worst</option>
+          </select>
+        </div>
+
+        <!-- Professionally Looking (Optional) -->
+        <div class="form-group">
+          <label class="form-label" for="professionallyLooking">Professionally Looking:</label>
+          <select id="professionallyLooking" class="dropdown">
+            <option value="">Select--a-- rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+            <option value="Worst">Worst</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Detailed Feedback Section -->
+      <h4>Detailed Feedback</h4>
+
+      <!-- Did you enjoy the trip? -->
+      <div class="form-group">
+        <label class="form-label">Did you enjoy the trip?</label>
+        <div>
+          <label><input type="radio" id="enjoyedTripYes" name="enjoyedTrip" value="yes"> Yes</label>
+          <label><input type="radio" id="enjoyedTripNo" name="enjoyedTrip" value="no"> No</label>
+        </div>
+      </div>
+
+      <!-- What areas could be improved? -->
+      <div class="form-group">
+        <label class="form-label">What practice could be improved?</label>
+        <textarea class="text-area" rows="4" id="areasToImprove"></textarea>
+      </div>
+
+      <!-- Suggestion Section -->
+      <div class="form-group">
+        <label class="form-label" for="suggestions">Suggestions:</label>
+        <textarea class="text-area" id="suggestions" rows="4"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div id="submit-button-container">
+        <button type="submit">Submit</button>
+      </div>
+
+      <div id="thanks-message">
+        <p>Thanks for selecting us!</p>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: Bootstrap, Popper.js, jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
