@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Travel Guide</title>
+
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    
+    <style>
+        /* Navbar customizations */
+        .navbar-brand .online-tour {
+            color: #11d038ac;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand .guide {
+            color: #3be0f6b9;
+            font-size: 1.5rem;
+        }
+
+        .navbar {
+            padding: 0.8rem 1rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa;
+            background-color: #3be0f6b9;
+            border-radius: 4px;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        .search-bar .fa-search {
+            position: absolute;
+            left: 10px;
+            color: gray;
+        }
+
+        .search-bar .fa-microphone {
+            position: absolute;
+            right: 10px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        /* Login/Register button */
+        .navbar-nav .nav-link.btn {
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .navbar-nav .nav-link.btn:hover {
+            background-color: #11d038ac;
+            color: white;
+        }
+
+        #formTitle {
+            text-align: center;
+            color: #333;
+        }
+        #accommodationForm {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="date"] {
+            width: 100%;
+        }
+        .checkboxes label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .terms {
+            margin-bottom: 15px;
+        }
+        #submitBtn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #submitBtn:hover {
+            background-color: #218838;
+        }
+        .place-selected {
+            background-color: green;
+            color: white;
+        }
+
+        /* Custom footer styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #11d038ac;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f8f9fa;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Footer icons */
+        .footer-icons {
+            margin: 0px;
+        }
+
+        .footer-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .footer-icons a:hover {
+            color: #11d038ac;
+        }
+    </style>
+</head>
+
+<body>
+  
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <span class="online-tour">OnlineTravel</span>
+      <span class="guide">Guide</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <!-- Navigation Links -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Accomodations.html">Accomodations</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="Agent_Reg.html">Agent Registration</a></li>
+        <li class="nav-item"><a class="nav-link" href="Admin.html">Admin</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <form class="form-inline my-2 my-lg-0">
+        <div class="search-bar position-relative">
+          <i class="fas fa-search"></i>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <i class="fas fa-microphone"></i>
+        </div>
+      </form>
+
+      <!-- Login/Register button -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" href="/login">Login/Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--Accomodation Form-->
+
+  <h2 id="formTitle">Accommodation Form</h2>
+
+  <form id="accommodationForm">
+
+      <label class="form-label" for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+      <label class="form-label" for="email">E-mail Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label class="form-label" for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label class="form-label" for="address">Address:</label>
+      <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+      <label class="form-label" for="location">Location to Visit:</label>
+      <select id="location" name="location" onchange="updatePlaces()" required>
+          <option value="">--Select a State--</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Maharashtra">Maharashtra</option>
+      </select>
+
+      <label class="form-label" for="places">Place:</label>
+      <select id="places" name="places" onchange="updateHotelInfo()" required>
+          <option value="">--Select a Place--</option>
+      </select>
+
+      <div id="hotelInfo" style="display: none;">
+          <p id="hotelName">Hotel Name: </p>
+          <p id="hotelAddress">Hotel Address: </p>
+      </div>
+
+      <label class="form-label" for="accommodationType">Accommodation Type:</label>
+      <select id="accommodationType" name="accommodationType" required>
+          <option value="">--Select Accommodation Type--</option>
+          <option value="Hotel">Hotel</option>
+          <option value="Resort">Resort</option>
+          <option value="Guest House">Guest House</option>
+      </select>
+
+      <label class="form-label" for="priceRange">Price Range:</label>
+      <select id="priceRange" name="priceRange" required>
+          <option value="">--Select Price Range--</option>
+          <option value="Low">Low (₹1000 - ₹3000)</option>
+          <option value="Medium">Medium (₹3000 - ₹6000)</option>
+          <option value="High">High (₹6000+)</option>
+      </select>
+
+      <label class="form-label" for="checkin">Check-in Date:</label>
+      <input type="date" id="checkin" name="checkin" required>
+
+      <br>
+
+      <label class="form-label" for="checkout">Check-out Date:</label>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <label class="form-label" for="persons">Number of Persons:</label>
+      <input type="number" id="persons" name="persons" min="1" placeholder="Enter number of persons" required>
+
+      <label class="form-label" for="roomType">Room Type:</label>
+      <select id="roomType" name="roomType" required>
+          <option value="">--Select Room Type--</option>
+          <option value="Single">Single</option>
+          <option value="Double">Double</option>
+          <option value="Suite">Suite</option>
+          <option value="Family">Family</option>
+      </select>
+
+      <label class="form-label" for="specialNeeds">Disabled person:</label>
+      <input type="checkbox" id="specialNeeds" name="specialNeeds"> I have special needs.
+
+      <label class="form-label" for="payment">Payment Details:</label>
+      <select id="payment" name="payment" required>
+          <option value="">--Select Payment Method--</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+      </select>
+
+      <div class="form-group">
+          <label class="form-label" for="services">Additional Services</label><br>
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="service1" value="transport">
+              <label class="form-check-label" for="service1">Transport</label>
+          </div>
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="service2" value="meals">
+              <label class="form-check-label" for="service2">Meals</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="service2" value="meals">
+            <label class="form-check-label" for="service2">Spa</label>
+        </div>
+      </div>
+
+      <h3 id="termsTitle">Terms and Conditions</h3>
+      <div class="terms">
+          <input type="checkbox" id="terms1" name="terms1" required> I have filled all the details correctly.
+          <br>
+          <input type="checkbox" id="terms2" name="terms2" required> Booking confirmation.
+      </div>
+
+      <button type="submit" id="submitBtn">Submit</button>
+
+      <p style="text-align: center;">Thanks for selecting us!</p>
+
+  </form>
+
+  <!-- Footer Section -->
+  <footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: Bootstrap, Popper.js, jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function updatePlaces() {
+        const location = document.getElementById('location').value;
+        const placesDropdown = document.getElementById('places');
+        placesDropdown.innerHTML = '';  // Clear previous options
+
+        let places = [];
+
+        if (location === 'Andhra Pradesh') {
+            places = ['Tirupati', 'Vijayawada', 'Araku Valley'];
+        } else if (location === 'Karnataka') {
+            places = ['Bengaluru', 'Mysuru', 'Coorg'];
+        } else if (location === 'Maharashtra') {
+            places = ['Mumbai', 'Pune', 'Lonavala'];
+        }
+
+        // Add the default "Select a Place" option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.text = '--Select a Place--';
+        placesDropdown.add(defaultOption);
+
+        places.forEach(place => {
+            const option = document.createElement('option');
+            option.value = place;
+            option.text = place;
+            placesDropdown.add(option);
+        });
+    }
+
+    function updateHotelInfo() {
+        const place = document.getElementById('places').value;
+        const hotelInfoDiv = document.getElementById('hotelInfo');
+        const hotelName = document.getElementById('hotelName');
+        const hotelAddress = document.getElementById('hotelAddress');
+
+        if (place) {
+            hotelInfoDiv.style.display = 'block';  // Show hotel info section
+
+            // Update hotel information based on the selected place
+            switch (place) {
+                case 'Tirupati':
+                    hotelName.innerText = 'Hotel Name: Tirupati Grand';
+                    hotelAddress.innerText = 'Hotel Address: 123 Tirupati St, Andhra Pradesh';
+                    break;
+                case 'Vijayawada':
+                    hotelName.innerText = 'Hotel Name: River View';
+                    hotelAddress.innerText = 'Hotel Address: 456 River Rd, Andhra Pradesh';
+                    break;
+                case 'Bengaluru':
+                    hotelName.innerText = 'Hotel Name: Bengaluru Palace';
+                    hotelAddress.innerText = 'Hotel Address: 789 Palace Ave, Karnataka';
+                    break;
+                // Add more cases as needed
+                default:
+                    hotelName.innerText = 'Hotel Name: ';
+                    hotelAddress.innerText = 'Hotel Address: ';
+                    break;
+            }
+        } else {
+            hotelInfoDiv.style.display = 'none';  // Hide hotel info section
+        }
+    }
+
+    document.getElementById('accommodationForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Display thank you message
+        document.getElementById('thankYouMessage').style.display = 'block';
+        this.reset(); // Reset the form fields
+    });
+</script>
+</body>
+</html>
+
