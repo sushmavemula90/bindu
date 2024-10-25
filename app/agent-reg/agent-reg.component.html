@@ -1,0 +1,100 @@
+<div id="registration-container">
+    <h2>Agent Registration Form</h2>
+    <p><strong>Eligibility Criteria:</strong></p>
+    <ul>
+        <li>Bachelor's degree</li>
+        <li>0-2 years of experience</li>
+        <li>Fluent in communication in English and any native language of India</li>
+    </ul>
+
+    <form id="registration-form">
+        <!-- Name (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="name">Name:</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter full name" required>
+        </div>
+
+        <!-- Email Address (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="email">Email Address:</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter email address" required>
+        </div>
+
+        <!-- Address (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="address">Address:</label>
+            <input type="text" id="address" class="form-control" placeholder="Enter your address" required>
+        </div>
+
+        <!-- Highest Education Qualification (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="education">Highest Education Qualification:</label>
+            <select id="education" class="form-control" required>
+                <option value="">Select qualification</option>
+                <option value="PG">Postgraduate</option>
+                <option value="UG">Undergraduate</option>
+                <option value="Diploma">Diploma</option>
+            </select>
+        </div>
+
+        <!-- Documentation Upload -->
+        <div class="form-group">
+            <label class="form-label required">Upload Documentation:</label>
+            <div class="form-group">
+                <label for="passportPhoto">Passport Size Photo:</label>
+                <input type="file" id="passportPhoto" class="form-control-file" accept=".jpg,.jpeg,.png" required>
+            </div>
+            <div class="form-group">
+                <label for="signature">Signature:</label>
+                <input type="file" id="signature" class="form-control-file" accept=".jpg,.jpeg,.png" required>
+            </div>
+            <div class="form-group">
+                <label for="aadharCard">Aadhar Card:</label>
+                <input type="file" id="aadharCard" class="form-control-file" accept=".pdf,.jpg,.jpeg" required>
+            </div>
+            <div class="form-group">
+                <label for="degreeCertificate">Degree Certificate:</label>
+                <input type="file" id="degreeCertificate" class="form-control-file" accept=".pdf,.jpg,.jpeg" required>
+            </div>
+            <div class="form-group">
+                <label for="resume">Resume (PDF):</label>
+                <input type="file" id="resume" class="form-control-file" accept=".pdf" required>
+            </div>
+            <small class="form-text text-muted">Please upload all documents in the specified formats.</small>
+        </div>
+
+        <!-- Reference Name (Optional) -->
+        <div class="form-group">
+            <label class="form-label" for="referenceName">Reference Name and Email (if any):</label>
+            <input type="text" id="referenceName" class="form-control" placeholder="Enter reference name and email">
+        </div>
+
+        <!-- Checkbox for Information Confirmation -->
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="confirmation" required>
+            <label class="form-check-label" for="confirmation">I confirm that all the information provided is accurate and true to my knowledge.</label>
+        </div>
+
+        <!-- Submit Button -->
+        <div id="submit-button-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div id="thanks-message">
+            <p>Thanks for selecting us!</p>
+        </div>
+    </form>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+        <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+        <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</footer>

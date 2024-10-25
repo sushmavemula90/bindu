@@ -1,0 +1,72 @@
+.navbar-brand .online-tour {
+    color: #11d038ac;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand .guide {
+    color: #3be0f6b9;
+    font-size: 1.4rem;
+}
+
+.navbar {
+    padding: 0.8rem 0.8rem;
+    background-color:#343a40 ;
+    
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.5rem 0.5rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+    background-color: #3be0f6b9;
+    border-radius: 4px;
+}
+
+.navbar-toggler {
+    border-color: #343a40;
+}
+
+/* Search bar styles */
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.search-bar .fa-search {
+    position: absolute;
+    left: 10px;
+    color: gray;
+}
+
+.search-bar .fa-microphone {
+    position: absolute;
+    right: 15px;
+    color: gray;
+    cursor: pointer;
+}
+
+/* Login/Register button */
+.navbar-nav .nav-link.btn {
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link.btn:hover {
+    background-color: #11d038ac;
+    color: white;
+}

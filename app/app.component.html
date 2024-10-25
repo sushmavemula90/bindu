@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <span class="online-tour">OnlineTravel</span>
+      <span class="guide">Guide</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <!-- Navigation Links -->
+        <li class="nav-item"><a class="nav-link" routerLink="/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/accomodation">Accomodations</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/feedback">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/agent-reg">Agent Registration</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/admin">Admin</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <form class="form-inline my-2 my-lg-0">
+        <div class="search-bar position-relative">
+          <i class="fas fa-search"></i>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <i class="fas fa-microphone"></i>
+        </div>
+      </form>
+
+      <!-- Login/Register button -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="/login">Login/Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<router-outlet></router-outlet>
