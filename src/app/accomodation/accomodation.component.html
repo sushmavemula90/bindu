@@ -1,0 +1,125 @@
+<!--Accomodation Form-->
+
+<h2 id="formTitle">Accommodation Form</h2>
+
+<form id="accommodationForm">
+
+    <label class="form-label" for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+    <label class="form-label" for="email">E-mail Address:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label class="form-label" for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+    <label class="form-label" for="address">Address:</label>
+    <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+    <label class="form-label" for="location">Location to Visit:</label>
+    <select id="location" name="location" onchange="updatePlaces()" required>
+        <option value="">--Select a State--</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Maharashtra">Maharashtra</option>
+    </select>
+
+    <label class="form-label" for="places">Place:</label>
+    <select id="places" name="places" onchange="updateHotelInfo()" required>
+        <option value="">--Select a Place--</option>
+    </select>
+
+    <div id="hotelInfo" style="display: none;">
+        <p id="hotelName">Hotel Name: </p>
+        <p id="hotelAddress">Hotel Address: </p>
+    </div>
+
+    <label class="form-label" for="accommodationType">Accommodation Type:</label>
+    <select id="accommodationType" name="accommodationType" required>
+        <option value="">--Select Accommodation Type--</option>
+        <option value="Hotel">Hotel</option>
+        <option value="Resort">Resort</option>
+        <option value="Guest House">Guest House</option>
+    </select>
+
+    <label class="form-label" for="priceRange">Price Range:</label>
+    <select id="priceRange" name="priceRange" required>
+        <option value="">--Select Price Range--</option>
+        <option value="Low">Low (₹1000 - ₹3000)</option>
+        <option value="Medium">Medium (₹3000 - ₹6000)</option>
+        <option value="High">High (₹6000+)</option>
+    </select>
+
+    <label class="form-label" for="checkin">Check-in Date:</label>
+    <input type="date" id="checkin" name="checkin" required>
+
+    <br>
+
+    <label class="form-label" for="checkout">Check-out Date:</label>
+    <input type="date" id="checkout" name="checkout" required>
+
+    <label class="form-label" for="persons">Number of Persons:</label>
+    <input type="number" id="persons" name="persons" min="1" placeholder="Enter number of persons" required>
+
+    <label class="form-label" for="roomType">Room Type:</label>
+    <select id="roomType" name="roomType" required>
+        <option value="">--Select Room Type--</option>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+        <option value="Suite">Suite</option>
+        <option value="Family">Family</option>
+    </select>
+
+    <label class="form-label" for="specialNeeds">Disabled person:</label>
+    <input type="checkbox" id="specialNeeds" name="specialNeeds"> I have special needs.
+
+    <label class="form-label" for="payment">Payment Details:</label>
+    <select id="payment" name="payment" required>
+        <option value="">--Select Payment Method--</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+    </select>
+
+    <div class="form-group">
+        <label class="form-label" for="services">Additional Services</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="service1" value="transport">
+            <label class="form-check-label" for="service1">Transport</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="service2" value="meals">
+            <label class="form-check-label" for="service2">Meals</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="service2" value="meals">
+          <label class="form-check-label" for="service2">Spa</label>
+      </div>
+    </div>
+
+    <h3 id="termsTitle">Terms and Conditions</h3>
+    <div class="terms">
+        <input type="checkbox" id="terms1" name="terms1" required> I have filled all the details correctly.
+        <br>
+        <input type="checkbox" id="terms2" name="terms2" required> Booking confirmation.
+    </div>
+
+    <button type="submit" id="submitBtn">Submit</button>
+
+    <p style="text-align: center;">Thanks for selecting us!</p>
+
+</form>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,158 @@
+<div id="feedback-container">
+  <h2 id="form-title">Feedback Form of Online Travel Guide</h2>
+
+  <form id="feedback-form">
+
+    <!-- Visitor's Name (Required) -->
+    <div class="form-group">
+      <label class="form-label required" for="visitorName">Visitor's Name:</label>
+      <input type="text" id="visitorName" class="form-input" placeholder="Enter full name" required>
+    </div>
+
+    <!-- Email Address (Required) -->
+    <div class="form-group">
+      <label class="form-label required" for="email">Email Address:</label>
+      <input type="email" id="email" class="form-input" placeholder="Enter email address" required>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+      <label class="form-label" for="phone">Phone Number:</label>
+      <input type="text" id="phone" class="form-input" placeholder="Enter phone number">
+    </div>
+
+    <!-- Destination Visited (Required) -->
+    <div class="form-group">
+      <label class="form-label required" for="destination">Destination Traveled:</label>
+      <input type="text" id="destination" class="form-input" placeholder="Enter destination name" required>
+    </div>
+
+    <!-- Agent Name (Required) -->
+    <div class="form-group">
+      <label class="form-label required" for="agentName">Agent Name:</label>
+      <input type="text" id="agentName" class="form-input" placeholder="Enter agent's name" required>
+    </div>
+
+    <!-- Visited Dates From and To (Both Required) -->
+    <div class="form-group">
+      <label class="form-label required" for="visitedDatesFrom">Visited Dates:</label>
+      <div class="d-flex">
+        <input type="date" id="visitedDatesFrom" class="form-date form-input" required>
+        <span class="date-separator">to</span>
+        <input type="date" id="visitedDatesTo" class="form-date form-input" required>
+      </div>
+    </div>
+
+    <!-- Dropdown Rating (Required) -->
+    <div class="form-group">
+      <label class="form-label required" for="rating">Rate your experience:</label>
+      <select id="rating" class="dropdown" required>
+        <option value="">Select a rating</option>
+        <option value="Excellent">Excellent</option>
+        <option value="Good">Good</option>
+        <option value="Bad">Bad</option>
+        <option value="Worst">Worst</option>
+      </select>
+    </div>
+
+    <!-- Feedback Options -->
+    <div class="form-group">
+      <label class="form-label">Rate the following services:</label>
+      <br>
+
+      <!-- Room Services (Optional) -->
+      <div class="form-group">
+        <label class="form-label" for="planningTrip">Room Services:</label>
+        <select id="planningTrip" class="dropdown">
+          <option value="">Select a rating</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Good">Good</option>
+          <option value="Bad">Bad</option>
+          <option value="Worst">Worst</option>
+        </select>
+      </div>
+
+      <!-- Exploration (Optional) -->
+      <div class="form-group">
+        <label class="form-label" for="exploration">Exploration:</label>
+        <select id="exploration" class="dropdown">
+          <option value="">Select a rating</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Good">Good</option>
+          <option value="Bad">Bad</option>
+          <option value="Worst">Worst</option>
+        </select>
+      </div>
+
+      <!-- Food and Dinning (Optional) -->
+      <div class="form-group">
+        <label class="form-label" for="wellBehaved">Food and Dinning:</label>
+        <select id="wellBehaved" class="dropdown">
+          <option value="">Select a rating</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Good">Good</option>
+          <option value="Bad">Bad</option>
+          <option value="Worst">Worst</option>
+        </select>
+      </div>
+
+      <!-- Transportation (Optional) -->
+      <div class="form-group">
+        <label class="form-label" for="professionallyLooking">Transportation:</label>
+        <select id="professionallyLooking" class="dropdown">
+          <option value="">Select a rating</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Good">Good</option>
+          <option value="Bad">Bad</option>
+          <option value="Worst">Worst</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Detailed Feedback Section -->
+    <h4>Detailed Feedback</h4>
+
+    <!-- Did you enjoy the trip? -->
+    <div class="form-group">
+      <label class="form-label">Did you enjoy the trip?</label>
+      <div>
+        <label><input type="radio" id="enjoyedTripYes" name="enjoyedTrip" value="yes"> Yes</label>
+        <label><input type="radio" id="enjoyedTripNo" name="enjoyedTrip" value="no"> No</label>
+      </div>
+    </div>
+
+    <!-- What areas could be improved? -->
+    <div class="form-group">
+      <label class="form-label">What practice could be improved?</label>
+      <textarea class="text-area" rows="4" id="areasToImprove" placeholder="Enter areas to improve"></textarea>
+    </div>
+
+    <!-- Suggestion Section -->
+    <div class="form-group">
+      <label class="form-label" for="suggestions">Suggestions:</label>
+      <textarea class="text-area" id="suggestions" rows="4" placeholder="Enter your suggestions"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div id="submit-button-container">
+      <button type="submit">Submit</button>
+    </div>
+
+    <div id="thanks-message">
+      <p>Thanks for selecting us!</p>
+    </div>
+  </form>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
