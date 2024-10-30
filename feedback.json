@@ -1,0 +1,36 @@
+[
+  {
+    "visitorName": "borra",
+    "email": "borra123@gmail.com",
+    "phone": "1234567890",
+    "destination": "vijayawada",
+    "agentName": "bindu",
+    "visitedDatesFrom": "2024-01-01",
+    "visitedDatesTo": "2025-01-01",
+    "rating": "Good",
+    "planningTrip": "Bad",
+    "exploration": "Bad",
+    "wellBehaved": "Good",
+    "professionallyLooking": "Worst",
+    "enjoyedTrip": "yes",
+    "areasToImprove": "provide free facilities",
+    "suggestions": "noooo."
+  },
+  {
+    "visitorName": "sushma",
+    "email": "s5@gmail.com",
+    "phone": "9876543",
+    "destination": "tirupathi",
+    "agentName": "srilakshmi",
+    "visitedDatesFrom": "2024-10-26",
+    "visitedDatesTo": "2024-11-02",
+    "rating": "Bad",
+    "planningTrip": "Worst",
+    "exploration": "Good",
+    "wellBehaved": "Excellent",
+    "professionallyLooking": "Bad",
+    "enjoyedTrip": "yes",
+    "areasToImprove": "juyvfri7",
+    "suggestions": "iubti u6r"
+  }
+]

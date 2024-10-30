@@ -1,0 +1,38 @@
+[
+  {
+    "name": "sushma",
+    "email": "sushmavemula",
+    "address": "76,bal",
+    "education": "PG",
+    "referenceName": "no",
+    "comments": "happy",
+    "confirmation": true
+  },
+  {
+    "name": "Sushma",
+    "email": "sushma1@gmail.com",
+    "address": "87,",
+    "education": "PG",
+    "referenceName": "",
+    "comments": "happy",
+    "confirmation": true
+  },
+  {
+    "name": "sushma",
+    "email": "sushma2@gmail.com",
+    "address": "adg",
+    "education": "PG",
+    "referenceName": "",
+    "comments": "happy",
+    "confirmation": true
+  },
+  {
+    "name": "sus",
+    "email": "sus2@gmail.com",
+    "address": "dsfds",
+    "education": "Diploma",
+    "referenceName": "",
+    "comments": "mom",
+    "confirmation": true
+  }
+]
